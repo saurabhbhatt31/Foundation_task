@@ -1,12 +1,9 @@
 <?php
     function set()
     {
-        if(isset($_GET['text']))
-        {
+        if (isset($_GET['text'])) {
             $name = $_GET['text'];
-        }
-        else 
-        {
+        } else {
             $name = NULL;
         }
         return $name;
@@ -24,23 +21,15 @@
     $length = getlength($str);
     function changeCase(int $length, string $str)
     {
-        if($length<2)
-        {
+        if ($length<2) {
             $cnvtstring = strtoupper($str);
             showString($cnvtstring);
-        }
-        elseif ($length>2 && strpos(trim($str),' ')==false)
-        {
+        } elseif ($length>2 && strpos(trim($str),' ')==false) {
             $cnvtstring = strtolower($str);
             showString($cnvtstring);
-        }
-        elseif ($length>2 && strpos(trim($str),' ')==true)
-        {
+        } elseif ($length>2 && strpos(trim($str),' ')==true) {
             $cnvtstring = ucfirst(strtolower($str));
-            showString($cnvtstring);
-        }
-        else 
-        {
+            showString($cnvtstring); } else {
             $cnvtstring = "String is not understandable";
             showString($cnvtstring);
         }
