@@ -58,7 +58,7 @@
          }
        }
     }
-    // HERE YOU CAN UNCOMMENT THE CALLING OF FUNCTION AND PROVIDE DIFFRENT PARAMETERS THAT YOU WANT TO EXECUTE OR PERFORM 
+
     $obj = new SingleTon;
     // $data = $obj->select('id','name','email','users1');
     // echo "<pre>";
