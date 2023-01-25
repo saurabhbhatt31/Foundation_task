@@ -7,14 +7,13 @@
        private static $database = null;
        public static function dbConnect($database_name)
        {
-         if(self::$database==null)
-         {
+         if(self::$database==null) {
          self::$database = new mysqli ('localhost','saurabh','hestabit@123',$database_name);
          echo "Now You're Connected With Database".'<br>';
          }
          return self::$database;
        }
-       public static function select($id,$f1, $f2, $tbname)
+       public function select($id,$f1, $f2, $tbname)
        {
          $con = self::dbConnect('practicetask');
          $sql= "SELECT `$id`,`$f1`, `$f2` FROM `$tbname`";
@@ -23,47 +22,38 @@
          return $response;
        }
       //  Insertion (No duplicacy due to unique email)
-       public static function insert($tbname, $f1, $f2, $v1, $v2)
+       public function insert($tbname, $f1, $f2, $v1, $v2)
        {
          $con = self::dbConnect('practicetask');
          $sql = "INSERT INTO `$tbname` (`$f1`,`$f2`) VALUES('$v1','$v2')";
          $result=$con->query($sql);
-         if($result)
-         {
+         if($result) {
             echo "INSERTION SUCCESSFLL";
-         }
-         else 
-         {
+         } else {
             echo "INSERTION FAILED DUE TO SOME REASONS".'<br>';
          }
        }
       //  Deletion
-       public static function delete($tbname,$id)
+       public function delete($tbname,$id)
        {
          $con = self::dbConnect('practicetask');
          $sql= "DELETE FROM `$tbname` WHERE `id`='$id'";
          $result=$con->query($sql);
-         if($result)
-         {
+         if($result) {
             echo "ROW DELETED";
-         }
-         else 
-         {
+         } else {
             echo "ROW DELETION FAILED DUE TO SOME REASONS".'<br>';
          }
        }
       //  UPDATION
-       public static function update($tbname, $f1, $v1, $id)
+       public function update($tbname, $f1, $v1, $id)
        {
          $con = self::dbConnect('practicetask');
          $sql = "UPDATE `$tbname` SET `$f1` ='$v1' WHERE `id`='$id'";
          $result=$con->query($sql);
-         if($result)
-         {
+         if($result) {
             echo "ROW UPDATED SUCCESSFULLY..".'<br>';
-         }
-         else 
-         {
+         } else {
             echo "ROW UPDATION FAILED DUE TO SOME REASONS".'<br>';
          }
        }
