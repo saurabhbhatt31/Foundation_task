@@ -1,5 +1,5 @@
 <?php
-    require_once 'divide_trait.php';
+    require_once 'Task2_2_divide_trait.php';
     class Addition
     {
         public function add(int $first_num, int $second_num): int
